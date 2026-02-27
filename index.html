@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הכנה ללידה שמחה ורגועה | עדולה</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --cream: #FDF8F4;
+            --blush-light: #FAF0EB;
+            --blush: #F2DDD6;
+            --rose-soft: #E8C5B8;
+            --mauve: #9B4F6B;
+            --deep-rose: #7A3A50;
+            --terracotta: #C47869;
+            --gold: #C9A572;
+            --text-dark: #2D1E22;
+            --text-medium: #5C3D44;
+            --text-light: #9B7B84;
+            --white: #FFFFFF;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            direction: rtl;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(253, 248, 244, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(232, 197, 184, 0.35);
+            padding: 10px 24px;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo {
+            height: 42px;
+            width: auto;
+        }
+
+        .header-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--deep-rose);
+            letter-spacing: 1px;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(150deg, #FDF8F4 0%, #F5E4DA 50%, #ECDACF 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(155, 79, 107, 0.1) 0%, transparent 65%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -80px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 165, 114, 0.12) 0%, transparent 65%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(155, 79, 107, 0.1);
+            color: var(--mauve);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(155, 79, 107, 0.25);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: 900;
+            color: var(--deep-rose);
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 .accent {
+            background: linear-gradient(135deg, var(--mauve), var(--terracotta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            color: var(--text-medium);
+            max-width: 660px;
+            margin: 20px auto 12px;
+            font-weight: 300;
+            line-height: 1.9;
+        }
+
+        .hero-author {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 48px;
+        }
+
+        .hero-author strong {
+            color: var(--terracotta);
+            font-weight: 700;
+        }
+
+        .hero-logo {
+            height: 88px;
+            width: auto;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ========== QUOTE LOGO ========== */
+        .quote-credit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.65);
+            font-weight: 400;
+        }
+
+        .quote-logo {
+            height: 26px;
+            width: auto;
+            filter: brightness(20);
+            opacity: 0.65;
+        }
+
+        /* ========== FOOTER LOGO ========== */
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .footer-logo {
+            height: 34px;
+            width: auto;
+            filter: brightness(20);
+            opacity: 0.55;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--mauve), var(--deep-rose));
+            color: white;
+            padding: 16px 38px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Heebo', sans-serif;
+            text-decoration: none;
+            transition: transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 8px 32px rgba(122, 58, 80, 0.3);
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(122, 58, 80, 0.4);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-light);
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            animation: float 2.2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(7px); }
+        }
+
+        /* ========== SHARED ========== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--mauve);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            color: var(--deep-rose);
+            margin-bottom: 14px;
+        }
+
+        .section-sub {
+            text-align: center;
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            max-width: 580px;
+            margin: 0 auto 52px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            max-width: 280px;
+            margin: 0 auto 52px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: var(--rose-soft);
+        }
+
+        .divider-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--mauve);
+        }
+
+        /* ========== VALUES ========== */
+        .values {
+            padding: 90px 24px;
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .value-card {
+            background: linear-gradient(145deg, var(--blush-light), var(--blush));
+            border-radius: 24px;
+            padding: 44px 32px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover { transform: translateY(-5px); }
+
+        .value-icon {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--deep-rose);
+            margin-bottom: 12px;
+        }
+
+        .value-text {
+            font-size: 0.95rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ========== QUOTE ========== */
+        .quote-section {
+            background: linear-gradient(140deg, var(--deep-rose), var(--mauve));
+            padding: 90px 24px;
+            text-align: center;
+        }
+
+        .big-quote-mark {
+            font-size: 5rem;
+            color: rgba(255,255,255,0.18);
+            line-height: 0.5;
+            display: block;
+            margin-bottom: 24px;
+            font-family: Georgia, serif;
+        }
+
+        .quote-body {
+            font-size: clamp(1.15rem, 2.8vw, 1.65rem);
+            font-weight: 300;
+            color: white;
+            max-width: 780px;
+            margin: 0 auto 28px;
+            line-height: 1.85;
+            font-style: italic;
+        }
+
+        /* ========== SYLLABUS ========== */
+        .syllabus {
+            padding: 90px 24px;
+            background: var(--cream);
+        }
+
+        .syllabus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 1px;
+            background: rgba(155, 79, 107, 0.1);
+            border: 1px solid rgba(155, 79, 107, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .topic-card {
+            background: var(--white);
+            padding: 26px 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: background 0.25s, opacity 0.25s;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .topic-card:hover {
+            background: var(--blush-light);
+        }
+
+        .topic-card.covered {
+            background: var(--blush-light);
+            border-inline-start: 3px solid var(--mauve);
+        }
+
+        .topic-card.covered:hover {
+            background: var(--blush-light);
+        }
+
+        .topic-card.covered .topic-num {
+            background: linear-gradient(135deg, var(--terracotta), var(--mauve));
+        }
+
+        .topic-card.covered .topic-info h3 {
+            color: var(--text-light);
+        }
+
+        .topic-card.covered .topic-info p {
+            opacity: 0.55;
+        }
+
+        /* ========== PROGRESS TRACKER ========== */
+        .progress-tracker {
+            margin-bottom: 32px;
+            background: var(--white);
+            border-radius: 14px;
+            padding: 18px 22px;
+            border: 1px solid rgba(155, 79, 107, 0.1);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            color: var(--text-medium);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .progress-count {
+            font-weight: 700;
+            color: var(--mauve);
+        }
+
+        .progress-bar {
+            height: 7px;
+            background: var(--blush);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--mauve), var(--terracotta));
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        .topic-num {
+            background: linear-gradient(135deg, var(--mauve), var(--deep-rose));
+            color: white;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .topic-info h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--deep-rose);
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .topic-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .syllabus-last-row {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            background: var(--white);
+        }
+
+        .syllabus-last-row .topic-card {
+            flex: 0 0 calc(100% / 3);
+            max-width: calc(100% / 3);
+        }
+
+        .syllabus-last-row .topic-card:first-child {
+            border-inline-end: 1px solid rgba(155, 79, 107, 0.1);
+        }
+
+        @media (max-width: 620px) {
+            .syllabus-last-row {
+                flex-direction: column;
+            }
+            .syllabus-last-row .topic-card {
+                flex: 1 1 auto;
+                max-width: 100%;
+            }
+            .syllabus-last-row .topic-card:first-child {
+                border-inline-end: none;
+                border-bottom: 1px solid rgba(155, 79, 107, 0.1);
+            }
+        }
+
+        /* ========== CTA BOTTOM ========== */
+        .cta-bottom {
+            background: linear-gradient(150deg, #F5E6DE, #ECDACF);
+            padding: 90px 24px;
+            text-align: center;
+        }
+
+        .cta-bottom h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800;
+            color: var(--deep-rose);
+            margin-bottom: 16px;
+        }
+
+        .cta-bottom p {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            max-width: 480px;
+            margin: 0 auto 44px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .wa-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            padding: 18px 44px;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: 'Heebo', sans-serif;
+            text-decoration: none;
+            transition: transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+        }
+
+        .wa-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 44px rgba(37, 211, 102, 0.42);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--deep-rose);
+            color: rgba(255,255,255,0.65);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.88rem;
+        }
+
+        footer strong { color: white; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 620px) {
+            /* Header */
+            .site-header { padding: 8px 16px; }
+            .header-logo { height: 34px; }
+            .header-brand { font-size: 1.1rem; }
+
+            /* Hero */
+            .hero { padding: 100px 20px 70px; }
+            .hero-logo { height: 64px; }
+            .hero-tagline { font-size: 1rem; }
+            .hero-tagline br { display: none; }
+
+            /* Grids */
+            .values-grid { grid-template-columns: 1fr; }
+            .syllabus-grid { grid-template-columns: 1fr; }
+
+            /* Progress */
+            .progress-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+
+            /* Quote */
+            .big-quote-mark { font-size: 3.5rem; }
+            .quote-credit { flex-direction: column; gap: 4px; }
+            .quote-logo { height: 20px; }
+
+            /* Footer */
+            .footer-inner { flex-direction: column; gap: 8px; }
+            .footer-logo { height: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ✦ HEADER ✦ -->
+<header class="site-header">
+    <div class="header-inner">
+        <img src="logo-transparent.png" alt="עדולה" class="header-logo">
+        <span class="header-brand">עדולה</span>
+    </div>
+</header>
+
+<!-- ✦ HERO ✦ -->
+<section class="hero">
+    <img src="logo-transparent.png" alt="עדולה" class="hero-logo">
+    <div class="hero-badge">✨ קורס הכנה ללידה</div>
+    <h1>הכנה ללידה<br><span class="accent">שמחה ורגועה</span></h1>
+    <p class="hero-tagline">
+        את הולכת לחוות את החוויה הכי עוצמתית והורמונאלית שחווית אי פעם.<br>
+        עם הכנה מותאמת אישית — אפשר לדייק אותה לחוויה שתרצי לזכור ולהוקיר.
+    </p>
+    <p class="hero-author">עם <strong>עדולה</strong> · עדי קופל לוי</p>
+    <a href="https://wa.me/972XXXXXXXXXX" class="cta-button">
+        💬 &nbsp;צרי קשר בוואטסאפ
+    </a>
+    <div class="scroll-hint">
+        <span>גלי למטה</span>
+        <span>↓</span>
+    </div>
+</section>
+
+<!-- ✦ VALUES ✦ -->
+<section class="values">
+    <div class="container">
+        <p class="section-eyebrow">הגישה שלי</p>
+        <h2 class="section-title">לידה היא לא רק אירוע — היא חוויה</h2>
+        <p class="section-sub">שלושה עמודי התווך שמנחים אותי לאורך הדרך</p>
+        <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-dot"></div>
+            <div class="divider-line"></div>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <span class="value-icon">🌸</span>
+                <h3 class="value-title">רוגע</h3>
+                <p class="value-text">לצאת מהפחד, לנשום לתוך הגוף, לבטוח בתהליך. הרוגע הוא לא היעדר לחץ — הוא היכולת להכיל אותו בשלווה.</p>
+            </div>
+            <div class="value-card">
+                <span class="value-icon">⚡</span>
+                <h3 class="value-title">עוצמה</h3>
+                <p class="value-text">הגוף שלך נבנה בדיוק בשביל הרגע הזה. כשאת מכירה את הכוח שיש בך — הלידה הופכת לחוויה שמשנה חיים.</p>
+            </div>
+            <div class="value-card">
+                <span class="value-icon">✨</span>
+                <h3 class="value-title">שמחה</h3>
+                <p class="value-text">כן, אפשר לשמוח בלידה. אפשר לנשום, לחייך, לאהוב את הרגע. ההכנה הנכונה פותחת את הדלת לחוויה שלמה ומאושרת.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ✦ QUOTE ✦ -->
+<section class="quote-section">
+    <div class="container">
+        <span class="big-quote-mark">&ldquo;</span>
+        <p class="quote-body">
+            ללדת זה בטבע שלנו. הגוף שלך יודע איך —
+            ואנחנו רק צריכות להקשיב לו וללמוד לבטוח בו.
+        </p>
+        <p class="quote-credit">
+            <img src="logo-transparent.png" alt="" class="quote-logo">
+            — עדולה
+        </p>
+    </div>
+</section>
+
+<!-- ✦ SYLLABUS ✦ -->
+<section class="syllabus">
+    <div class="container">
+        <p class="section-eyebrow">מה נעשה יחד</p>
+        <h2 class="section-title">הנושאים שנעבור יחד</h2>
+        <p class="section-sub">סילבוס מקיף שמכסה את כל מה שצריך לדעת — לפני, תוך כדי ואחרי הלידה</p>
+        <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-dot"></div>
+            <div class="divider-line"></div>
+        </div>
+        <div class="progress-tracker">
+            <div class="progress-header">
+                <span>לחצי על נושא כדי לסמן שכוסה</span>
+                <span class="progress-count" id="progress-text">0 / 14 נושאים</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <div class="syllabus-grid">
+            <div class="topic-card">
+                <div class="topic-num">01</div>
+                <div class="topic-info">
+                    <h3>מחשבות, שיחה עצמית ומחשבות מעצימות</h3>
+                    <p>איך עוברים מפחד וכאב לכיוון לידה רגועה — ומחליפים מחשבות מעכבות במחשבות חיוביות ומעצימות</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">02</div>
+                <div class="topic-info">
+                    <h3>מהלך הלידה</h3>
+                    <p>שלבים, תהליכים והמלצות לאורך כל הדרך</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">03</div>
+                <div class="topic-info">
+                    <h3>עיסוי פרינאום</h3>
+                    <p>הכנה גופנית חשובה לקראת הלידה</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">04</div>
+                <div class="topic-info">
+                    <h3>הורמוני ההיריון והלידה</h3>
+                    <p>להכיר את ההורמונים שמניעים את הגוף שלך — ולעבוד איתם</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">05</div>
+                <div class="topic-info">
+                    <h3>הכנה מנטאלית ללידה</h3>
+                    <p>כלים מנטאליים לחיזוק הביטחון, הרוגע והעוצמה הפנימית</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">06</div>
+                <div class="topic-info">
+                    <h3>בחירת מקום לידה</h3>
+                    <p>בחינה ובחירה של מקום הלידה ותקשורת נכונה עם הצוות</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">07</div>
+                <div class="topic-info">
+                    <h3>סימנים מבשרים וסימני לידה</h3>
+                    <p>סימנים מבשרים, סימני לידה וסימני אזהרה שכדאי להכיר</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">08</div>
+                <div class="topic-info">
+                    <h3>תיק לידה ויציאה לבית החולים</h3>
+                    <p>מה לארוז ומתי בדיוק יוצאים?</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">09</div>
+                <div class="topic-info">
+                    <h3>התנהלות בזמן צירים</h3>
+                    <p>כלים מעשיים לצירים, כולל שיטת ימימה</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">10</div>
+                <div class="topic-info">
+                    <h3>הפחתת כאב ודימיון מודרך</h3>
+                    <p>מה שבאמת עוזר — כולל דוגמה מעשית לדימיון מודרך</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">11</div>
+                <div class="topic-info">
+                    <h3>תנוחות לידה ותנועה</h3>
+                    <p>תנוחות וכלי תנועה שמסייעים לאורך כל הלידה</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-num">12</div>
+                <div class="topic-info">
+                    <h3>התערבויות בלידה</h3>
+                    <p>עיקרון מפל ההתערבויות — מה, מתי ולמה</p>
+                </div>
+            </div>
+            <div class="syllabus-last-row">
+                <div class="topic-card">
+                    <div class="topic-num">13</div>
+                    <div class="topic-info">
+                        <h3>בעד ונגד אפידורל</h3>
+                        <p>כל המידע הדרוש לקבלת החלטה מושכלת ואישית</p>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-num">14</div>
+                    <div class="topic-info">
+                        <h3>פוסט פרטום — היום שאחרי</h3>
+                        <p>הכנה לתקופה שאחרי: הנקה, שינה ותזונה נכונה</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ✦ CTA BOTTOM ✦ -->
+<section class="cta-bottom">
+    <div class="container">
+        <h2>מוכנה להתחיל?</h2>
+        <p>צרי קשר עכשיו ונבנה יחד את ההכנה שמתאימה בדיוק לך ולגוף שלך</p>
+        <a href="https://wa.me/972XXXXXXXXXX" class="wa-button">
+            💬 &nbsp;כתבי לי בוואטסאפ
+        </a>
+    </div>
+</section>
+
+<!-- ✦ FOOTER ✦ -->
+<footer>
+    <div class="footer-inner">
+        <img src="logo-transparent.png" alt="עדולה" class="footer-logo">
+        <p>עמוד זה נבנה באהבה עבור <strong>עדי קופל לוי (עדולה)</strong> · הכנה ללידה שמחה ורגועה</p>
+    </div>
+</footer>
+
+<script>
+    const STORAGE_KEY = 'adula-covered-topics';
+    const cards = document.querySelectorAll('.topic-card');
+    const progressText = document.getElementById('progress-text');
+    const progressFill = document.getElementById('progress-bar-fill');
+    const total = cards.length;
+
+    function updateProgress() {
+        const done = document.querySelectorAll('.topic-card.covered').length;
+        progressText.textContent = done + ' / ' + total + ' נושאים';
+        progressFill.style.width = (done / total * 100) + '%';
+    }
+
+    function markCard(card, save) {
+        const numEl = card.querySelector('.topic-num');
+        if (card.classList.contains('covered')) {
+            card.classList.remove('covered');
+            numEl.textContent = card.dataset.num;
+        } else {
+            if (!card.dataset.num) card.dataset.num = numEl.textContent;
+            card.classList.add('covered');
+            numEl.textContent = '✓';
+        }
+        updateProgress();
+        if (save) {
+            const covered = [];
+            cards.forEach(function(c, i) {
+                if (c.classList.contains('covered')) covered.push(i);
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(covered));
+        }
+    }
+
+    // טעינת מצב שמור
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+        JSON.parse(saved).forEach(function(i) {
+            if (cards[i]) markCard(cards[i], false);
+        });
+    }
+
+    updateProgress();
+
+    cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+            markCard(card, true);
+        });
+    });
+</script>
+
+</body>
+</html>
