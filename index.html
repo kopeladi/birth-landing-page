@@ -569,9 +569,32 @@
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 620px) {
-            .hero { padding: 110px 20px 70px; }
+            /* Header */
+            .site-header { padding: 8px 16px; }
+            .header-logo { height: 34px; }
+            .header-brand { font-size: 1.1rem; }
+
+            /* Hero */
+            .hero { padding: 100px 20px 70px; }
+            .hero-logo { height: 64px; }
+            .hero-tagline { font-size: 1rem; }
+            .hero-tagline br { display: none; }
+
+            /* Grids */
             .values-grid { grid-template-columns: 1fr; }
             .syllabus-grid { grid-template-columns: 1fr; }
+
+            /* Progress */
+            .progress-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+
+            /* Quote */
+            .big-quote-mark { font-size: 3.5rem; }
+            .quote-credit { flex-direction: column; gap: 4px; }
+            .quote-logo { height: 20px; }
+
+            /* Footer */
+            .footer-inner { flex-direction: column; gap: 8px; }
+            .footer-logo { height: 28px; }
         }
     </style>
 </head>
